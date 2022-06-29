@@ -5,6 +5,17 @@ class App extends React.Component {
 
   onRegisterSubmit = (term) => {
 
+    const fileData = JSON.stringify(term);
+    const blob = new Blob([fileData], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.download = "register-info.json";
+    link.href = url;
+
+    link.click();
+    console.log(term);
+
   }
 
   render() {
@@ -13,7 +24,7 @@ class App extends React.Component {
         <ProviderRegistration onRegister={this.onRegisterSubmit} />
       </div>
     );
-  };
+  }
 
 }
 
