@@ -3,10 +3,16 @@ import ProviderRegistration from './ProviderRegistration';
 
 class App extends React.Component {
 
-  onRegisterSubmit = (term) => {
+  onRegisterSubmit = (firstAndLast, npiNumber, businessAddress,
+    telephoneNumber, emailAddress) => {
 
-    const fileData = JSON.stringify(term);
-    const blob = new Blob([fileData], { type: "text/plain" });
+    const name = JSON.stringify(firstAndLast);
+    const npiNum = JSON.stringify(npiNumber);
+    const busnAddress = JSON.stringify(businessAddress);
+    const telephoneNum = JSON.stringify(telephoneNumber);
+    const emailAdd = JSON.stringify(emailAddress);
+    const blob = new Blob([name, npiNum, busnAddress, telephoneNum,
+      emailAdd], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
 
     const link = document.createElement("a");
@@ -14,7 +20,7 @@ class App extends React.Component {
     link.href = url;
 
     link.click();
-    console.log(term);
+    console.log(name);
 
   }
 
