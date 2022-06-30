@@ -3,6 +3,9 @@ import ProviderRegistration from './ProviderRegistration';
 
 class App extends React.Component {
 
+  // I know you don't typically do this? I just wanted to do something with that data
+  // instead of having a form that does nothing and this is what I thought of.
+  // This method will download the data into a .json file and the user clicks submit
   onRegisterSubmit = (firstAndLast, npiNumber, businessAddress,
     telephoneNumber, emailAddress) => {
 

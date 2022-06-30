@@ -8,6 +8,7 @@ class ProviderRegistration extends React.Component {
     telephoneNumber: '', emailAddress: ''
   };
 
+  // this will pass the data up to App.js
   onFormSubmit = (e) => {
 
     e.preventDefault();
